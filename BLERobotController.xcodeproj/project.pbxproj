@@ -13,6 +13,7 @@
 		F4E0C52A262CDA6B0055403D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4E0C528262CDA6B0055403D /* Main.storyboard */; };
 		F4E0C52C262CDA6D0055403D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4E0C52B262CDA6D0055403D /* Assets.xcassets */; };
 		F4E0C52F262CDA6D0055403D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4E0C52D262CDA6D0055403D /* LaunchScreen.storyboard */; };
+		F4E0C53D262CF2BC0055403D /* BLEModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E0C53C262CF2BC0055403D /* BLEModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		F4E0C52B262CDA6D0055403D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4E0C52E262CDA6D0055403D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4E0C530262CDA6D0055403D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4E0C53C262CF2BC0055403D /* BLEModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,24 @@
 		F4E0C521262CDA6B0055403D /* BLERobotController */ = {
 			isa = PBXGroup;
 			children = (
+				F4E0C528262CDA6B0055403D /* Main.storyboard */,
+				F4E0C526262CDA6B0055403D /* ViewController.swift */,
+				F4E0C53C262CF2BC0055403D /* BLEModel.swift */,
+				F4E0C53F262CF2CB0055403D /* Supporting FIles */,
+			);
+			path = BLERobotController;
+			sourceTree = "<group>";
+		};
+		F4E0C53F262CF2CB0055403D /* Supporting FIles */ = {
+			isa = PBXGroup;
+			children = (
 				F4E0C522262CDA6B0055403D /* AppDelegate.swift */,
 				F4E0C524262CDA6B0055403D /* SceneDelegate.swift */,
-				F4E0C526262CDA6B0055403D /* ViewController.swift */,
-				F4E0C528262CDA6B0055403D /* Main.storyboard */,
 				F4E0C52B262CDA6D0055403D /* Assets.xcassets */,
 				F4E0C52D262CDA6D0055403D /* LaunchScreen.storyboard */,
 				F4E0C530262CDA6D0055403D /* Info.plist */,
 			);
-			path = BLERobotController;
+			name = "Supporting FIles";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4E0C527262CDA6B0055403D /* ViewController.swift in Sources */,
+				F4E0C53D262CF2BC0055403D /* BLEModel.swift in Sources */,
 				F4E0C523262CDA6B0055403D /* AppDelegate.swift in Sources */,
 				F4E0C525262CDA6B0055403D /* SceneDelegate.swift in Sources */,
 			);
