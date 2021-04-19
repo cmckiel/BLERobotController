@@ -20,6 +20,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lcz-7s-KdL">
                                 <rect key="frame" x="177.5" y="170" width="59" height="30"/>
                                 <state key="normal" title="Connect"/>
+                                <connections>
+                                    <action selector="connect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="La1-Yl-J1g"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fCL-Ur-0c3" userLabel="Button Stack">
                                 <rect key="frame" x="132" y="340.5" width="150" height="225"/>
@@ -35,6 +38,9 @@
                                                     <constraint firstAttribute="height" constant="75" id="sRZ-Xb-h2K"/>
                                                 </constraints>
                                                 <state key="normal" title="W"/>
+                                                <connections>
+                                                    <action selector="forward:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d6f-Ik-Rjz"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -49,6 +55,9 @@
                                                     <constraint firstAttribute="height" constant="75" id="j5T-9d-K1G"/>
                                                 </constraints>
                                                 <state key="normal" title="A"/>
+                                                <connections>
+                                                    <action selector="left:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8qF-Os-j4K"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F8j-Yw-PVF">
                                                 <rect key="frame" x="75" y="0.0" width="75" height="75"/>
@@ -58,6 +67,9 @@
                                                     <constraint firstAttribute="width" constant="75" id="tmc-MG-03q"/>
                                                 </constraints>
                                                 <state key="normal" title="D"/>
+                                                <connections>
+                                                    <action selector="right:" destination="BYZ-38-t0r" eventType="touchUpInside" id="umf-kw-xRL"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -72,6 +84,9 @@
                                                     <constraint firstAttribute="height" constant="75" id="wnK-bJ-sal"/>
                                                 </constraints>
                                                 <state key="normal" title="S"/>
+                                                <connections>
+                                                    <action selector="disconnect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JrU-nv-KJK"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -95,6 +110,10 @@
                             <constraint firstItem="Lcz-7s-KdL" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="b7a-Bv-k22"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="connectButton" destination="Lcz-7s-KdL" id="QGn-yL-Wdi"/>
+                        <outlet property="infoLabel" destination="7v8-Ci-gSw" id="qm0-kU-vG5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

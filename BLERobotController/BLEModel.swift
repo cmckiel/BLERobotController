@@ -14,10 +14,12 @@ struct BLEParameters {
 }
 
 protocol BLEModelDelegate {
-    
+    func updateInfo(info: String)
 }
 
 class BLEModel: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
+    
+    var delegate: BLEModelDelegate?
     
     private var centralManager: CBCentralManager!
     private var robot: CBPeripheral?
@@ -67,6 +69,22 @@ class BLEModel: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
         }
         print("Assigned.")
         centralManager.stopScan()
+        delegate?.updateInfo(info: "Connected")
+    }
+    
+    func sendData(_ array: [UInt8]) {
+        guard let peripheral = robot else { return }
+        guard let characteristic = robotCharacteristic else { return }
+        
+        var commandData: Data = .init()
+        commandData.append(contentsOf: array)
+        
+        peripheral.writeValue(commandData, for: characteristic, type: CBCharacteristicWriteType.withoutResponse)
+    }
+    
+    func disconnect() {
+        guard let peripheral = robot else { return }
+        centralManager.cancelPeripheralConnection(peripheral)
     }
     
     // MARK -  CBCentralManagerDelegate
@@ -86,6 +104,12 @@ class BLEModel: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
         print("Connected.")
         peripheral.delegate = self
         discoverServices(peripheral)
+    }
+    
+    func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
+        robot = nil
+        robotCharacteristic = nil
+        delegate?.updateInfo(info: "Disconnected.")
     }
     
     //MARK - CBPeripheralDelegate
